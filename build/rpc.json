@@ -12610,7 +12610,9 @@
           "responseMessageName": "LoginUserResponse",
           "code": "rpc loginUser (LoginUserRequest) returns (LoginUserResponse);",
           "doc": "登录",
-          "roles": [],
+          "roles": [
+            "admin"
+          ],
           "isDeprecated": false
         },
         {
