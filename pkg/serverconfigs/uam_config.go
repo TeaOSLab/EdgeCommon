@@ -16,6 +16,7 @@ type UAMConfig struct {
 	ExceptURLPatterns []*shared.URLPattern           `yaml:"exceptURLPatterns" json:"exceptURLPatterns"` // 排除的URL
 	MinQPSPerIP       int                            `yaml:"minQPSPerIP" json:"minQPSPerIP"`             // 启用要求的单IP最低平均QPS
 	Conds             *shared.HTTPRequestCondsConfig `yaml:"conds" json:"conds"`                         // 匹配条件
+	KeyLife           int                            `yaml:"keyLife" json:"keyLife"`                     // Key有效期
 }
 
 func NewUAMConfig() *UAMConfig {
