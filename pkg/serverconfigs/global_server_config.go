@@ -56,6 +56,7 @@ type GlobalServerConfig struct {
 		LnRequestSchedulingMethod LnRequestSchedulingMethod `yaml:"lnRequestSchedulingMethod" json:"lnRequestSchedulingMethod"` // Ln请求调度方法
 		ServerName                string                    `yaml:"serverName" json:"serverName"`                               // Server名称
 		EnableServerAddrVariable  bool                      `yaml:"enableServerAddrVariable" json:"enableServerAddrVariable"`   // 是否支持${serverAddr}变量
+		XFFMaxAddresses           int                       `yaml:"xffMaxAddresses" json:"xffMaxAddresses"`                     // XFF中最多的地址数
 
 		DomainAuditingIsOn   bool   `yaml:"domainAuditingIsOn" json:"domainAuditingIsOn"`     // 域名是否需要审核
 		DomainAuditingPrompt string `yaml:"domainAuditingPrompt" json:"domainAuditingPrompt"` // 域名审核的提示
