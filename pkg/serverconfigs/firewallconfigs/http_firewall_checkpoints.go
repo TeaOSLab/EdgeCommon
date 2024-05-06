@@ -250,6 +250,14 @@ var AllCheckpoints = []*HTTPFirewallCheckpointDefinition{
 		Priority:    100,
 	},
 	{
+		Name:        "请求报头最大长度",
+		Prefix:      "headerMaxLength",
+		Description: "最长的请求报头的长度。",
+		IsRequest:   true,
+		HasParams:   false,
+		Priority:    100,
+	},
+	{
 		Name:        "国家/地区名称",
 		Prefix:      "geoCountryName",
 		Description: "当前客户端所处国家/地区名称。",
