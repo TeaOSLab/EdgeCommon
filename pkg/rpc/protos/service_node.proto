@@ -74,6 +74,9 @@ service NodeService {
 	// 停止节点
 	rpc stopNode (StopNodeRequest) returns (StopNodeResponse);
 
+	// 卸载节点
+	rpc uninstallNode(UninstallNodeRequest) returns (UninstallNodeResponse);
+
 	// 更改节点连接的API节点信息
 	rpc updateNodeConnectedAPINodes (UpdateNodeConnectedAPINodesRequest) returns (RPCSuccess);
 
@@ -411,8 +414,18 @@ message StopNodeRequest {
 }
 
 message StopNodeResponse {
-	bool isOk = 1;
-	string error = 2;
+	bool isOk = 1; // 是否成功
+	string error = 2; // 失败时的错误信息
+}
+
+// 卸载节点
+message UninstallNodeRequest {
+	int64 nodeId = 1; // 节点ID
+}
+
+message UninstallNodeResponse {
+	bool isOk = 1; // 是否成功
+	string error = 2; // 失败时的错误信息
 }
 
 // 更改节点连接的API节点信息

@@ -267,6 +267,7 @@ func init() {
 		"node@log_install_node_remotely":                                      "",
 		"node@log_start_node_remotely":                                        "",
 		"node@log_stop_node_remotely":                                         "",
+		"node@log_uninstall_node_remotely":                                    "",
 		"node@log_up_node":                                                    "",
 		"node@log_update_node":                                                "",
 		"node@log_update_node_installation_status":                            "",

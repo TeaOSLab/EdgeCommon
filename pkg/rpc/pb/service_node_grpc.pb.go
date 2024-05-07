@@ -39,6 +39,7 @@ const (
 	NodeService_UpgradeNode_FullMethodName                                = "/pb.NodeService/upgradeNode"
 	NodeService_StartNode_FullMethodName                                  = "/pb.NodeService/startNode"
 	NodeService_StopNode_FullMethodName                                   = "/pb.NodeService/stopNode"
+	NodeService_UninstallNode_FullMethodName                              = "/pb.NodeService/uninstallNode"
 	NodeService_UpdateNodeConnectedAPINodes_FullMethodName                = "/pb.NodeService/updateNodeConnectedAPINodes"
 	NodeService_CountAllEnabledNodesWithNodeGrantId_FullMethodName        = "/pb.NodeService/countAllEnabledNodesWithNodeGrantId"
 	NodeService_FindAllEnabledNodesWithNodeGrantId_FullMethodName         = "/pb.NodeService/findAllEnabledNodesWithNodeGrantId"
@@ -131,6 +132,8 @@ type NodeServiceClient interface {
 	StartNode(ctx context.Context, in *StartNodeRequest, opts ...grpc.CallOption) (*StartNodeResponse, error)
 	// 停止节点
 	StopNode(ctx context.Context, in *StopNodeRequest, opts ...grpc.CallOption) (*StopNodeResponse, error)
+	// 卸载节点
+	UninstallNode(ctx context.Context, in *UninstallNodeRequest, opts ...grpc.CallOption) (*UninstallNodeResponse, error)
 	// 更改节点连接的API节点信息
 	UpdateNodeConnectedAPINodes(ctx context.Context, in *UpdateNodeConnectedAPINodesRequest, opts ...grpc.CallOption) (*RPCSuccess, error)
 	// 计算使用某个认证的节点数量
@@ -429,6 +432,15 @@ func (c *nodeServiceClient) StartNode(ctx context.Context, in *StartNodeRequest,
 func (c *nodeServiceClient) StopNode(ctx context.Context, in *StopNodeRequest, opts ...grpc.CallOption) (*StopNodeResponse, error) {
 	out := new(StopNodeResponse)
 	err := c.cc.Invoke(ctx, NodeService_StopNode_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *nodeServiceClient) UninstallNode(ctx context.Context, in *UninstallNodeRequest, opts ...grpc.CallOption) (*UninstallNodeResponse, error) {
+	out := new(UninstallNodeResponse)
+	err := c.cc.Invoke(ctx, NodeService_UninstallNode_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -893,6 +905,8 @@ type NodeServiceServer interface {
 	StartNode(context.Context, *StartNodeRequest) (*StartNodeResponse, error)
 	// 停止节点
 	StopNode(context.Context, *StopNodeRequest) (*StopNodeResponse, error)
+	// 卸载节点
+	UninstallNode(context.Context, *UninstallNodeRequest) (*UninstallNodeResponse, error)
 	// 更改节点连接的API节点信息
 	UpdateNodeConnectedAPINodes(context.Context, *UpdateNodeConnectedAPINodesRequest) (*RPCSuccess, error)
 	// 计算使用某个认证的节点数量
@@ -1050,6 +1064,9 @@ func (UnimplementedNodeServiceServer) StartNode(context.Context, *StartNodeReque
 }
 func (UnimplementedNodeServiceServer) StopNode(context.Context, *StopNodeRequest) (*StopNodeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method StopNode not implemented")
+}
+func (UnimplementedNodeServiceServer) UninstallNode(context.Context, *UninstallNodeRequest) (*UninstallNodeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UninstallNode not implemented")
 }
 func (UnimplementedNodeServiceServer) UpdateNodeConnectedAPINodes(context.Context, *UpdateNodeConnectedAPINodesRequest) (*RPCSuccess, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateNodeConnectedAPINodes not implemented")
@@ -1565,6 +1582,24 @@ func _NodeService_StopNode_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(NodeServiceServer).StopNode(ctx, req.(*StopNodeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _NodeService_UninstallNode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UninstallNodeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(NodeServiceServer).UninstallNode(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: NodeService_UninstallNode_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(NodeServiceServer).UninstallNode(ctx, req.(*UninstallNodeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -2479,6 +2514,10 @@ var NodeService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "stopNode",
 			Handler:    _NodeService_StopNode_Handler,
+		},
+		{
+			MethodName: "uninstallNode",
+			Handler:    _NodeService_UninstallNode_Handler,
 		},
 		{
 			MethodName: "updateNodeConnectedAPINodes",
