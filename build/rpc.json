@@ -5308,6 +5308,17 @@
           "isDeprecated": false
         },
         {
+          "name": "uninstallNode",
+          "requestMessageName": "UninstallNodeRequest",
+          "responseMessageName": "UninstallNodeResponse",
+          "code": "rpc uninstallNode(UninstallNodeRequest) returns (UninstallNodeResponse);",
+          "doc": "卸载节点",
+          "roles": [
+            "admin"
+          ],
+          "isDeprecated": false
+        },
+        {
           "name": "updateNodeConnectedAPINodes",
           "requestMessageName": "UpdateNodeConnectedAPINodesRequest",
           "responseMessageName": "RPCSuccess",
@@ -22268,7 +22279,7 @@
     },
     {
       "name": "StopNodeResponse",
-      "code": "message StopNodeResponse {\n\tbool isOk = 1;\n\tstring error = 2;\n}",
+      "code": "message StopNodeResponse {\n\tbool isOk = 1; // 是否成功\n\tstring error = 2; // 失败时的错误信息\n}",
       "doc": ""
     },
     {
@@ -22415,6 +22426,16 @@
       "name": "TruncateDBTableRequest",
       "code": "message TruncateDBTableRequest {\n\tstring dbTable = 1;\n}",
       "doc": "清空表"
+    },
+    {
+      "name": "UninstallNodeRequest",
+      "code": "message UninstallNodeRequest {\n\tint64 nodeId = 1; // 节点ID\n}",
+      "doc": "卸载节点"
+    },
+    {
+      "name": "UninstallNodeResponse",
+      "code": "message UninstallNodeResponse {\n\tbool isOk = 1; // 是否成功\n\tstring error = 2; // 失败时的错误信息\n}",
+      "doc": ""
     },
     {
       "name": "UpdateACMEProviderAccountRequest",

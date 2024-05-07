@@ -266,6 +266,7 @@ const (
 	Node_LogInstallNodeRemotely                                 langs.MessageCode = "node@log_install_node_remotely"                                      // 远程安装节点 %d
 	Node_LogStartNodeRemotely                                   langs.MessageCode = "node@log_start_node_remotely"                                        // 远程启动节点 %d
 	Node_LogStopNodeRemotely                                    langs.MessageCode = "node@log_stop_node_remotely"                                         // 远程停止节点 %d
+	Node_LogUninstallNodeRemotely                               langs.MessageCode = "node@log_uninstall_node_remotely"                                    // 远程卸载节点 %d
 	Node_LogUpNode                                              langs.MessageCode = "node@log_up_node"                                                    // 手动上线节点 %d
 	Node_LogUpdateNode                                          langs.MessageCode = "node@log_update_node"                                                // 修改节点 %d 基本信息
 	Node_LogUpdateNodeInstallationStatus                        langs.MessageCode = "node@log_update_node_installation_status"                            // 修改节点安装状态 %d

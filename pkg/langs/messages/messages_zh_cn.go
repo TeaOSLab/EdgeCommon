@@ -267,6 +267,7 @@ func init() {
 		"node@log_install_node_remotely":                                      "远程安装节点 %d",
 		"node@log_start_node_remotely":                                        "远程启动节点 %d",
 		"node@log_stop_node_remotely":                                         "远程停止节点 %d",
+		"node@log_uninstall_node_remotely":                                    "远程卸载节点 %d",
 		"node@log_up_node":                                                    "手动上线节点 %d",
 		"node@log_update_node":                                                "修改节点 %d 基本信息",
 		"node@log_update_node_installation_status":                            "修改节点安装状态 %d",
