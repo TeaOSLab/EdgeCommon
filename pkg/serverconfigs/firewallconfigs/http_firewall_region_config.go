@@ -9,10 +9,11 @@ import (
 type HTTPFirewallRegionConfig struct {
 	IsOn bool `yaml:"isOn" json:"isOn"`
 
-	AllowCountryIds  []int64 `yaml:"allowCountryIds" json:"allowCountryIds"`   // 允许的国家/地区
-	DenyCountryIds   []int64 `yaml:"denyCountryIds" json:"denyCountryIds"`     // 封禁的国家/地区
-	AllowProvinceIds []int64 `yaml:"allowProvinceIds" json:"allowProvinceIds"` // 允许的省或自治区
-	DenyProvinceIds  []int64 `yaml:"denyProvinceIds" json:"denyProvinceIds"`   // 封禁的省或自治区
+	AllowCountryIds   []int64 `yaml:"allowCountryIds" json:"allowCountryIds"`     // 允许的国家/地区
+	DenyCountryIds    []int64 `yaml:"denyCountryIds" json:"denyCountryIds"`       // 封禁的国家/地区
+	AllowProvinceIds  []int64 `yaml:"allowProvinceIds" json:"allowProvinceIds"`   // 允许的省或自治区
+	DenyProvinceIds   []int64 `yaml:"denyProvinceIds" json:"denyProvinceIds"`     // 封禁的省或自治区
+	AllowSearchEngine bool    `yaml:"allowSearchEngine" json:"allowSearchEngine"` // 允许搜索引擎
 
 	CountryOnlyURLPatterns   []*shared.URLPattern `yaml:"countryOnlyURLPatterns" json:"countryOnlyURLPatterns"`     // 仅限的URL
 	CountryExceptURLPatterns []*shared.URLPattern `yaml:"countryExceptURLPatterns" json:"countryExceptURLPatterns"` // 排除的URL
