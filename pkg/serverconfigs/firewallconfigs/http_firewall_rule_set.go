@@ -13,15 +13,16 @@ type HTTPFirewallActionConfig struct {
 
 // HTTPFirewallRuleSet 规则集定义
 type HTTPFirewallRuleSet struct {
-	Id          int64                  `yaml:"id" json:"id"`
-	IsOn        bool                   `yaml:"isOn" json:"isOn"`
-	Name        string                 `yaml:"name" json:"name"`
-	Code        string                 `yaml:"code" json:"code"`
-	Description string                 `yaml:"description" json:"description"`
-	Connector   string                 `yaml:"connector" json:"connector"`
-	RuleRefs    []*HTTPFirewallRuleRef `yaml:"ruleRefs" json:"ruleRefs"`
-	Rules       []*HTTPFirewallRule    `yaml:"rules" json:"rules"`
-	IgnoreLocal bool                   `yaml:"ignoreLocal" json:"ignoreLocal"`
+	Id                 int64                  `yaml:"id" json:"id"`
+	IsOn               bool                   `yaml:"isOn" json:"isOn"`
+	Name               string                 `yaml:"name" json:"name"`
+	Code               string                 `yaml:"code" json:"code"`
+	Description        string                 `yaml:"description" json:"description"`
+	Connector          string                 `yaml:"connector" json:"connector"`
+	RuleRefs           []*HTTPFirewallRuleRef `yaml:"ruleRefs" json:"ruleRefs"`
+	Rules              []*HTTPFirewallRule    `yaml:"rules" json:"rules"`
+	IgnoreLocal        bool                   `yaml:"ignoreLocal" json:"ignoreLocal"`
+	IgnoreSearchEngine bool                   `yaml:"ignoreSearchEngine" json:"ignoreSearchEngine"`
 
 	Actions []*HTTPFirewallActionConfig `yaml:"actions" json:"actions"`
 
