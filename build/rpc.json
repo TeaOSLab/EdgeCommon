@@ -4431,6 +4431,35 @@
       "doc": "登录SESSION服务"
     },
     {
+      "name": "LoginTicketService",
+      "methods": [
+        {
+          "name": "createLoginTicket",
+          "requestMessageName": "CreateLoginTicketRequest",
+          "responseMessageName": "CreateLoginTicketResponse",
+          "code": "rpc createLoginTicket(CreateLoginTicketRequest) returns (CreateLoginTicketResponse);",
+          "doc": "创建票据",
+          "roles": [
+            "admin"
+          ],
+          "isDeprecated": false
+        },
+        {
+          "name": "findLoginTicketWithValue",
+          "requestMessageName": "FindLoginTicketWithValueRequest",
+          "responseMessageName": "FindLoginTicketWithValueResponse",
+          "code": "rpc findLoginTicketWithValue(FindLoginTicketWithValueRequest) returns (FindLoginTicketWithValueResponse);",
+          "doc": "查找票据\n查找成功后，会自动删除票据信息，所以票据信息只能查询一次",
+          "roles": [
+            "admin"
+          ],
+          "isDeprecated": false
+        }
+      ],
+      "filename": "service_login_ticket.proto",
+      "doc": "登录票据相关服务"
+    },
+    {
       "name": "MessageService",
       "methods": [
         {
@@ -15623,6 +15652,16 @@
       "doc": ""
     },
     {
+      "name": "CreateLoginTicketRequest",
+      "code": "message CreateLoginTicketRequest {\n\tint64 adminId = 1; // 管理员ID，和用户ID二选一\n\tint64 userId = 2; // 用户ID\n\tstring ip = 3; // 可选参数，用户客户端IP\n}",
+      "doc": "创建票据"
+    },
+    {
+      "name": "CreateLoginTicketResponse",
+      "code": "message CreateLoginTicketResponse {\n\tstring value = 1; // 票据值\n}",
+      "doc": ""
+    },
+    {
       "name": "CreateMessageMediaInstanceRequest",
       "code": "message CreateMessageMediaInstanceRequest {\n\tstring name = 1;\n\tstring mediaType = 2;\n\tbytes paramsJSON = 3;\n\trepeated int64 groupIds = 4;\n\tstring description = 5;\n\tbytes rateJSON = 6;\n\tint32 hashLife = 7;\n}",
       "doc": "创建接收人"
@@ -19553,6 +19592,16 @@
       "doc": ""
     },
     {
+      "name": "FindLoginTicketWithValueRequest",
+      "code": "message FindLoginTicketWithValueRequest {\n\tstring value = 1; // 票据值\n}",
+      "doc": "查找票据"
+    },
+    {
+      "name": "FindLoginTicketWithValueResponse",
+      "code": "message FindLoginTicketWithValueResponse {\n\tLoginTicket loginTicket = 1; // 票据信息\n}",
+      "doc": ""
+    },
+    {
       "name": "FindNSAccessLogRequest",
       "code": "message FindNSAccessLogRequest {\n\tstring requestId = 1;\n}",
       "doc": "查找单个日志"
@@ -21566,6 +21615,11 @@
       "name": "LoginSession",
       "code": "message LoginSession {\n\tint64 id = 1;\n\tint64 adminId = 2;\n\tint64 userId = 3;\n\tstring sid = 4;\n\tbytes valuesJSON = 5;\n\tstring ip = 6;\n\tint64 createdAt = 7;\n\tint64 expiresAt = 8;\n}",
       "doc": "登录SESSION"
+    },
+    {
+      "name": "LoginTicket",
+      "code": "message LoginTicket {\n\tint64 id = 1; // ID\n\tint64 expiresAt = 2; // 过期时间\n\tstring value = 3; // 票据值\n\tint64 adminId = 4; // 管理员ID\n\tint64 userId = 5; // 用户ID\n\tstring ip = 6; // 登录时客户端IP\n}",
+      "doc": "登录票据"
     },
     {
       "name": "LoginUserRequest",
