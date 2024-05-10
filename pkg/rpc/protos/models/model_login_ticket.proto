@@ -1,0 +1,14 @@
+syntax = "proto3";
+option go_package = "./pb";
+
+package pb;
+
+// 登录票据
+message LoginTicket {
+	int64 id = 1; // ID
+	int64 expiresAt = 2; // 过期时间
+	string value = 3; // 票据值
+	int64 adminId = 4; // 管理员ID
+	int64 userId = 5; // 用户ID
+	string ip = 6; // 登录时客户端IP
+}
