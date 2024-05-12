@@ -10,4 +10,5 @@ message DNSProvider {
 	string typeName = 4;
 	bytes apiParamsJSON = 5;
 	int64 dataUpdatedAt = 6;
+	int32 minTTL = 7; // 最小TTL
 }
