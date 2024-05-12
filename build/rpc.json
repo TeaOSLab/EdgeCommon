@@ -15363,7 +15363,7 @@
     },
     {
       "name": "CreateDNSProviderRequest",
-      "code": "message CreateDNSProviderRequest {\n\tstring name = 1;\n\tstring type = 2;\n\tbytes apiParamsJSON = 3;\n}",
+      "code": "message CreateDNSProviderRequest {\n\tstring name = 1;\n\tstring type = 2;\n\tbytes apiParamsJSON = 3;\n\tint32 minTTL = 4; // 最小TTL\n}",
       "doc": "创建服务商"
     },
     {
@@ -16303,7 +16303,7 @@
     },
     {
       "name": "DNSProvider",
-      "code": "message DNSProvider {\n\tint64 id = 1;\n\tstring name = 2;\n\tstring type = 3;\n\tstring typeName = 4;\n\tbytes apiParamsJSON = 5;\n\tint64 dataUpdatedAt = 6;\n}",
+      "code": "message DNSProvider {\n\tint64 id = 1;\n\tstring name = 2;\n\tstring type = 3;\n\tstring typeName = 4;\n\tbytes apiParamsJSON = 5;\n\tint64 dataUpdatedAt = 6;\n\tint32 minTTL = 7; // 最小TTL\n}",
       "doc": ""
     },
     {
@@ -22593,7 +22593,7 @@
     },
     {
       "name": "UpdateDNSProviderRequest",
-      "code": "message UpdateDNSProviderRequest {\n\tint64 dnsProviderId = 1;\n\tstring name = 2;\n\tbytes apiParamsJSON = 3;\n}",
+      "code": "message UpdateDNSProviderRequest {\n\tint64 dnsProviderId = 1;\n\tstring name = 2;\n\tbytes apiParamsJSON = 3;\n\tint32 minTTL = 4; // 最小TTL\n}",
       "doc": "修改服务商"
     },
     {

@@ -41,6 +41,7 @@ message CreateDNSProviderRequest {
 	string name = 1;
 	string type = 2;
 	bytes apiParamsJSON = 3;
+	int32 minTTL = 4; // 最小TTL
 }
 
 message CreateDNSProviderResponse {
@@ -52,6 +53,7 @@ message UpdateDNSProviderRequest {
 	int64 dnsProviderId = 1;
 	string name = 2;
 	bytes apiParamsJSON = 3;
+	int32 minTTL = 4; // 最小TTL
 }
 
 // 计算服务商数量
