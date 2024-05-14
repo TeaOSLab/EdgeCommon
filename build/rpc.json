@@ -14963,7 +14963,7 @@
     },
     {
       "name": "CountAllEnabledUsersRequest",
-      "code": "message CountAllEnabledUsersRequest {\n\tstring keyword = 1;\n\tbool isVerifying = 2;\n}",
+      "code": "message CountAllEnabledUsersRequest {\n\tstring keyword = 1;\n\tbool isVerifying = 2;\n\tint32 mobileIsVerified = 3; // 手机号是否已验证，1表示已验证，0表示未验证，-1表示所有状态\n}",
       "doc": "计算用户数量"
     },
     {
@@ -21138,7 +21138,7 @@
     },
     {
       "name": "ListEnabledUsersRequest",
-      "code": "message ListEnabledUsersRequest {\n\tstring keyword = 1;\n\tbool isVerifying = 4;\n\tint64 offset = 2;\n\tint64 size = 3;\n}",
+      "code": "message ListEnabledUsersRequest {\n\tstring keyword = 1;\n\tbool isVerifying = 4;\n\tint32 mobileIsVerified = 5; // 手机号是否已验证，1表示已验证，0表示未验证，-1表示所有状态\n\tint64 offset = 2;\n\tint64 size = 3;\n}",
       "doc": "列出单页用户"
     },
     {

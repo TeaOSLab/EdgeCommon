@@ -159,12 +159,14 @@ message DeleteUserRequest {
 message CountAllEnabledUsersRequest {
 	string keyword = 1;
 	bool isVerifying = 2;
+	int32 mobileIsVerified = 3; // 手机号是否已验证，1表示已验证，0表示未验证，-1表示所有状态
 }
 
 // 列出单页用户
 message ListEnabledUsersRequest {
 	string keyword = 1;
 	bool isVerifying = 4;
+	int32 mobileIsVerified = 5; // 手机号是否已验证，1表示已验证，0表示未验证，-1表示所有状态
 	int64 offset = 2;
 	int64 size = 3;
 }
