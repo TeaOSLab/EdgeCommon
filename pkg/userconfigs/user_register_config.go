@@ -42,6 +42,7 @@ type UserRegisterConfig struct {
 		CanLogin   bool   `yaml:"canLogin" json:"canLogin"`     // 是否可以使用激活的邮箱登录
 		Body       string `yaml:"body" json:"body"`             // 内容
 		Life       int32  `yaml:"life" json:"life"`             // 有效期
+		Force      bool   `yaml:"force" json:"force"`           // 是否强制绑定
 	} `yaml:"mobileVerification" json:"mobileVerification"`
 
 	// CDN
