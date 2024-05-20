@@ -68,14 +68,14 @@ var AllRuleOperators = []*RuleOperatorDefinition{
 	{
 		Name:            "正则匹配",
 		Code:            HTTPFirewallRuleOperatorMatch,
-		Description:     "使用正则表达式匹配，在头部使用(?i)表示不区分大小写，<a href=\"https://goedge.cn/docs/Appendix/Regexp/Index.md\" target=\"_blank\">正则表达式语法 &raquo;</a>。",
+		Description:     "使用正则表达式匹配，在头部使用(?i)表示不区分大小写，<a href=\"https://goedge.cloud/docs/Appendix/Regexp/Index.md\" target=\"_blank\">正则表达式语法 &raquo;</a>。",
 		CaseInsensitive: HTTPFirewallRuleCaseInsensitiveYes,
 		DataType:        "regexp",
 	},
 	{
 		Name:            "正则不匹配",
 		Code:            HTTPFirewallRuleOperatorNotMatch,
-		Description:     "使用正则表达式不匹配，在头部使用(?i)表示不区分大小写，<a href=\"https://goedge.cn/docs/Appendix/Regexp/Index.md\" target=\"_blank\">正则表达式语法 &raquo;</a>。",
+		Description:     "使用正则表达式不匹配，在头部使用(?i)表示不区分大小写，<a href=\"https://goedge.cloud/docs/Appendix/Regexp/Index.md\" target=\"_blank\">正则表达式语法 &raquo;</a>。",
 		CaseInsensitive: HTTPFirewallRuleCaseInsensitiveYes,
 		DataType:        "regexp",
 	},
