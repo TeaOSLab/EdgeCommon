@@ -13,7 +13,7 @@ func TestNewWriter(t *testing.T) {
 	//write
 	var buf = &bytes.Buffer{}
 	var writer = iplibrary.NewWriterV1(buf, &iplibrary.Meta{
-		Author: "GoEdge <https://goedge.cn>",
+		Author: "GoEdge <https://goedge.cloud>",
 	})
 
 	err := writer.WriteMeta()

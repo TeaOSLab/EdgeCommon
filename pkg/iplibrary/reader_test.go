@@ -17,7 +17,7 @@ import (
 func TestNewReader(t *testing.T) {
 	var buf = &bytes.Buffer{}
 	var writer = iplibrary.NewWriterV1(buf, &iplibrary.Meta{
-		Author: "GoEdge <https://goedge.cn>",
+		Author: "GoEdge <https://goedge.cloud>",
 	})
 
 	err := writer.WriteMeta()
@@ -116,7 +116,7 @@ func BenchmarkNewReader(b *testing.B) {
 
 	var buf = &bytes.Buffer{}
 	var writer = iplibrary.NewWriterV1(buf, &iplibrary.Meta{
-		Author: "GoEdge <https://goedge.cn>",
+		Author: "GoEdge <https://goedge.cloud>",
 	})
 
 	err := writer.WriteMeta()
