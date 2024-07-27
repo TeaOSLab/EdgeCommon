@@ -3,8 +3,9 @@
 package serverconfigs
 
 import (
-	"github.com/iwind/TeaGo/assert"
 	"testing"
+
+	"github.com/iwind/TeaGo/assert"
 )
 
 func TestHTTPCompressionConfig_Init(t *testing.T) {
@@ -99,7 +100,7 @@ func TestHTTPCompressionConfig_Init(t *testing.T) {
 func TestHTTPCompressionConfig_MatchAcceptEncoding(t *testing.T) {
 	var config = &HTTPCompressionConfig{
 		GzipRef: &HTTPCompressionRef{
-			//IsOn: true,
+			// IsOn: true,
 		},
 		Gzip: &HTTPGzipCompressionConfig{
 			IsOn: true,
@@ -124,7 +125,7 @@ func TestHTTPCompressionConfig_MatchAcceptEncoding(t *testing.T) {
 
 func TestHTTPCompressionConfig_MatchAcceptEncoding2(t *testing.T) {
 	var config = &HTTPCompressionConfig{
-		//UseDefaultTypes: true,
+		// UseDefaultTypes: true,
 		Types: []HTTPCompressionType{"brotli"},
 	}
 	err := config.Init()

@@ -1,10 +1,11 @@
-// Copyright 2024 GoEdge CDN goedge.cdn@gmail.com. All rights reserved. Official site: https://goedge.cn .
+// Copyright 2024 GoEdge CDN goedge.cdn@gmail.com. All rights reserved. Official site: https://goedge.cloud .
 
 package iputils_test
 
 import (
-	"github.com/TeaOSLab/EdgeCommon/pkg/iputils"
 	"testing"
+
+	"github.com/TeaOSLab/EdgeCommon/pkg/iputils"
 )
 
 func TestParseCIDR(t *testing.T) {

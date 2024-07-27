@@ -1,8 +1,9 @@
 package configutils
 
 import (
-	"github.com/iwind/TeaGo/logs"
 	"testing"
+
+	"github.com/iwind/TeaGo/logs"
 )
 
 func TestCopyStructObject(t *testing.T) {

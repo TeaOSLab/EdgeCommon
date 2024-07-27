@@ -1,10 +1,11 @@
 package schedulingconfigs
 
 import (
+	"hash/crc32"
+
 	"github.com/TeaOSLab/EdgeCommon/pkg/serverconfigs/shared"
 	"github.com/iwind/TeaGo/maps"
 	"github.com/iwind/TeaGo/rands"
-	"hash/crc32"
 )
 
 // HashScheduling Hash调度算法

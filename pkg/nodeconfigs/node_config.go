@@ -8,6 +8,12 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"os"
+	"reflect"
+	"strconv"
+	"strings"
+	"sync"
+
 	"github.com/TeaOSLab/EdgeCommon/pkg/nodeutils"
 	"github.com/TeaOSLab/EdgeCommon/pkg/serverconfigs"
 	"github.com/TeaOSLab/EdgeCommon/pkg/serverconfigs/ddosconfigs"
@@ -16,11 +22,6 @@ import (
 	"github.com/iwind/TeaGo/Tea"
 	"github.com/iwind/TeaGo/lists"
 	"github.com/iwind/TeaGo/maps"
-	"os"
-	"reflect"
-	"strconv"
-	"strings"
-	"sync"
 )
 
 var sharedNodeConfig *NodeConfig = nil
@@ -60,6 +61,7 @@ type NodeConfig struct {
 	// 性能
 	MaxCPU       int32                                 `yaml:"maxCPU" json:"maxCPU"`
 	APINodeAddrs []*serverconfigs.NetworkAddressConfig `yaml:"apiNodeAddrs" json:"apiNodeAddrs"`
+	BypassMobile int32                                 `yaml:"bypassMobile" json:"bypassMobile"` // 是否过移动
 
 	CacheDiskDir         string               `yaml:"cacheDiskDir" json:"cacheDiskDir"`                 // 文件缓存目录
 	MaxCacheDiskCapacity *shared.SizeCapacity `yaml:"maxCacheDiskCapacity" json:"maxCacheDiskCapacity"` // 文件缓存容量

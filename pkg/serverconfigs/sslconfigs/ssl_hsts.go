@@ -1,9 +1,10 @@
 package sslconfigs
 
 import (
-	"github.com/TeaOSLab/EdgeCommon/pkg/configutils"
 	"strconv"
 	"strings"
+
+	"github.com/TeaOSLab/EdgeCommon/pkg/configutils"
 )
 
 // HSTS设置

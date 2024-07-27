@@ -1,12 +1,13 @@
 package configutils_test
 
 import (
-	"github.com/TeaOSLab/EdgeCommon/pkg/configutils"
-	"github.com/iwind/TeaGo/assert"
-	"github.com/iwind/TeaGo/types"
 	"runtime"
 	"strconv"
 	"testing"
+
+	"github.com/TeaOSLab/EdgeCommon/pkg/configutils"
+	"github.com/iwind/TeaGo/assert"
+	"github.com/iwind/TeaGo/types"
 )
 
 func TestParseVariables(t *testing.T) {

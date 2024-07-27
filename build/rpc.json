@@ -5854,6 +5854,17 @@
             "admin"
           ],
           "isDeprecated": false
+        },
+        {
+          "name": "updateNodeBypassMobile",
+          "requestMessageName": "UpdateNodeBypassMobile",
+          "responseMessageName": "RPCSuccess",
+          "code": "rpc updateNodeBypassMobile(UpdateNodeBypassMobile) returns (RPCSuccess);",
+          "doc": "修改节点是否过移动",
+          "roles": [
+            "admin"
+          ],
+          "isDeprecated": false
         }
       ],
       "filename": "service_node.proto",
@@ -21798,7 +21809,7 @@
     },
     {
       "name": "Node",
-      "code": "message Node {\n\tint64 id = 1;\n\tstring name = 2;\n\tbytes statusJSON = 3;\n\tstring installDir = 4;\n\tbool isInstalled = 5;\n\tstring code = 6;\n\tstring uniqueId = 7;\n\tstring secret = 8;\n\tint64 version = 9;\n\tint64 latestVersion = 10;\n\trepeated int64 connectedAPINodeIds = 11;\n\tint32 maxCPU = 12;\n\tbool isOn = 13;\n\tbool isUp = 14;\n\trepeated DNSRoute dnsRoutes = 15;\n\tbool isActive = 16;\n\tSizeCapacity maxCacheDiskCapacity = 17;\n\tSizeCapacity maxCacheMemoryCapacity = 18;\n\tstring cacheDiskDir = 19;\n\tbytes cacheDiskSubDirsJSON = 23;\n\tint32 level = 20;\n\trepeated string lnAddrs = 21; // Ln访问地址\n\tbool enableIPLists = 22;\n\tbytes apiNodeAddrsJSON = 24;\n\tstring offlineDay = 25; // 下线日期\n\tbool isBackupForCluster = 26; // 是否为集群备用节点\n\tbool isBackupForGroup = 27; // 是否为分组备用节点\n\n\tNodeCluster nodeCluster = 32; // 主集群\n\tNodeLogin nodeLogin = 33;\n\tNodeInstallStatus installStatus = 34;\n\trepeated NodeIPAddress ipAddresses = 35;\n\tNodeGroup nodeGroup = 36;\n\tNodeRegion nodeRegion = 37;\n\trepeated NodeCluster secondaryNodeClusters = 38; // 从集群\n}",
+      "code": "message Node {\n\tint64 id = 1;\n\tstring name = 2;\n\tbytes statusJSON = 3;\n\tstring installDir = 4;\n\tbool isInstalled = 5;\n\tstring code = 6;\n\tstring uniqueId = 7;\n\tstring secret = 8;\n\tint64 version = 9;\n\tint64 latestVersion = 10;\n\trepeated int64 connectedAPINodeIds = 11;\n\tint32 maxCPU = 12;\n\tbool isOn = 13;\n\tbool isUp = 14;\n\trepeated DNSRoute dnsRoutes = 15;\n\tbool isActive = 16;\n\tSizeCapacity maxCacheDiskCapacity = 17;\n\tSizeCapacity maxCacheMemoryCapacity = 18;\n\tstring cacheDiskDir = 19;\n\tbytes cacheDiskSubDirsJSON = 23;\n\tint32 level = 20;\n\trepeated string lnAddrs = 21; // Ln访问地址\n\tbool enableIPLists = 22;\n\tbytes apiNodeAddrsJSON = 24;\n\tstring offlineDay = 25; // 下线日期\n\tbool isBackupForCluster = 26; // 是否为集群备用节点\n\tbool isBackupForGroup = 27; // 是否为分组备用节点\n\n\tNodeCluster nodeCluster = 32; // 主集群\n\tNodeLogin nodeLogin = 33;\n\tNodeInstallStatus installStatus = 34;\n\trepeated NodeIPAddress ipAddresses = 35;\n\tNodeGroup nodeGroup = 36;\n\tNodeRegion nodeRegion = 37;\n\trepeated NodeCluster secondaryNodeClusters = 38; // 从集群\n\n\tint32 bypassMobile = 101;\n}",
       "doc": ""
     },
     {
@@ -23155,6 +23166,11 @@
       "name": "UpdateNodeActionRequest",
       "code": "message UpdateNodeActionRequest {\n\tint64 nodeActionId = 1; // 动作ID\n\tbytes condsJSON = 2;\n\tbytes actionJSON = 3;\n\tbytes durationJSON = 4; // 持续时间\n\tbool isOn = 5; // 是否启用\n}",
       "doc": "修改动作"
+    },
+    {
+      "name": "UpdateNodeBypassMobile",
+      "code": "message UpdateNodeBypassMobile{\n\tint64 nodeId = 1;\n\tint32 bypassMobile = 2;\n}",
+      "doc": "修改节点过移动"
     },
     {
       "name": "UpdateNodeCacheRequest",

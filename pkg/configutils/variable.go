@@ -5,12 +5,13 @@ import (
 	"crypto/sha256"
 	"encoding/base64"
 	"fmt"
-	stringutil "github.com/iwind/TeaGo/utils/string"
 	"net/url"
 	"regexp"
 	"strconv"
 	"strings"
 	"sync"
+
+	stringutil "github.com/iwind/TeaGo/utils/string"
 )
 
 // VariableHolder 变量信息存储类型

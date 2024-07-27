@@ -3,8 +3,9 @@
 package serverconfigs
 
 import (
-	"github.com/iwind/TeaGo/assert"
 	"testing"
+
+	"github.com/iwind/TeaGo/assert"
 )
 
 func TestWebPImageConfig_MatchAccept(t *testing.T) {

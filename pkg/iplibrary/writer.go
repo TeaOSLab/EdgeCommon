@@ -1,4 +1,4 @@
-// Copyright 2022 GoEdge CDN goedge.cdn@gmail.com. All rights reserved. Official site: https://goedge.cn .
+// Copyright 2022 GoEdge CDN goedge.cdn@gmail.com. All rights reserved. Official site: https://goedge.cloud .
 
 package iplibrary
 
@@ -6,13 +6,14 @@ import (
 	"encoding/binary"
 	"encoding/json"
 	"errors"
-	"github.com/TeaOSLab/EdgeCommon/pkg/configutils"
 	"io"
 	"math/big"
 	"net"
 	"strconv"
 	"strings"
 	"time"
+
+	"github.com/TeaOSLab/EdgeCommon/pkg/configutils"
 )
 
 type WriterV1 struct {

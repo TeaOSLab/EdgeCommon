@@ -1,11 +1,12 @@
-// Copyright 2023 GoEdge CDN goedge.cdn@gmail.com. All rights reserved. Official site: https://goedge.cn .
+// Copyright 2023 GoEdge CDN goedge.cdn@gmail.com. All rights reserved. Official site: https://goedge.cloud .
 
 package firewallconfigs_test
 
 import (
-	"github.com/iwind/TeaGo/assert"
 	"regexp"
 	"testing"
+
+	"github.com/iwind/TeaGo/assert"
 )
 
 func TestUserAgentMatch_PHP(t *testing.T) {

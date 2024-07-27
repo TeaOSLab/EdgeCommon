@@ -4,8 +4,9 @@ package serverconfigs
 
 import (
 	"context"
-	"github.com/TeaOSLab/EdgeCommon/pkg/serverconfigs/shared"
 	"testing"
+
+	"github.com/TeaOSLab/EdgeCommon/pkg/serverconfigs/shared"
 )
 
 func TestReverseProxyConfig_Init(t *testing.T) {
@@ -44,7 +45,7 @@ func TestReverseProxyConfig_Init(t *testing.T) {
 		}
 	}
 
-	//config.ResetScheduling()
+	// config.ResetScheduling()
 
 	nextOrigin := config.NextOrigin(&shared.RequestCall{
 		Formatter:         nil,

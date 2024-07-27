@@ -1,8 +1,9 @@
 package shared
 
 import (
-	"github.com/iwind/TeaGo/maps"
 	"net/http"
+
+	"github.com/iwind/TeaGo/maps"
 )
 
 // RequestCall 请求调用

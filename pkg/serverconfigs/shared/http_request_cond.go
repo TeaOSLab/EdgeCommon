@@ -5,13 +5,14 @@ import (
 	"encoding/binary"
 	"encoding/json"
 	"errors"
-	"github.com/iwind/TeaGo/lists"
-	"github.com/iwind/TeaGo/types"
-	"github.com/iwind/TeaGo/utils/string"
 	"net"
 	"path/filepath"
 	"regexp"
 	"strings"
+
+	"github.com/iwind/TeaGo/lists"
+	"github.com/iwind/TeaGo/types"
+	"github.com/iwind/TeaGo/utils/string"
 )
 
 // HTTPRequestCond HTTP请求匹配条件定义

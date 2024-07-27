@@ -1,10 +1,11 @@
-// Copyright 2023 GoEdge CDN goedge.cdn@gmail.com. All rights reserved. Official site: https://goedge.cn .
+// Copyright 2023 GoEdge CDN goedge.cdn@gmail.com. All rights reserved. Official site: https://goedge.cloud .
 
 package serverconfigs
 
 import (
-	"github.com/TeaOSLab/EdgeCommon/pkg/serverconfigs/shared"
 	"strings"
+
+	"github.com/TeaOSLab/EdgeCommon/pkg/serverconfigs/shared"
 )
 
 type HTTPBaseOptimizationConfig struct {

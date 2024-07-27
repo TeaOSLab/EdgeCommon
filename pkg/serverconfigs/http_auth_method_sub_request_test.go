@@ -3,10 +3,11 @@
 package serverconfigs
 
 import (
-	"github.com/iwind/TeaGo/rands"
 	"net/http"
 	"strings"
 	"testing"
+
+	"github.com/iwind/TeaGo/rands"
 )
 
 func TestHTTPAuthRequestMethod_Filter(t *testing.T) {

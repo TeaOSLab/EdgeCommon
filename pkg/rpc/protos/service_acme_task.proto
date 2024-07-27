@@ -88,6 +88,7 @@ message CreateACMETaskRequest {
 	bool autoRenew = 5;
 	string authType = 6;
 	string authURL = 7;
+	bool async = 100;
 }
 
 message CreateACMETaskResponse {

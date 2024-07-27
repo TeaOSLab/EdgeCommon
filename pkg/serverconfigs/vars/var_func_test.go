@@ -1,9 +1,10 @@
 package vars
 
 import (
-	"github.com/iwind/TeaGo/assert"
 	"reflect"
 	"testing"
+
+	"github.com/iwind/TeaGo/assert"
 )
 
 func TestFuncFloat(t *testing.T) {

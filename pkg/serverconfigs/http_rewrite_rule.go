@@ -2,9 +2,10 @@ package serverconfigs
 
 import (
 	"fmt"
+	"regexp"
+
 	"github.com/TeaOSLab/EdgeCommon/pkg/configutils"
 	"github.com/TeaOSLab/EdgeCommon/pkg/serverconfigs/shared"
-	"regexp"
 )
 
 type HTTPRewriteMode = string

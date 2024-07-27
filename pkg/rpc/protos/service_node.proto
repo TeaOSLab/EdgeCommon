@@ -214,6 +214,9 @@ service NodeService {
 
 	// 修改节点的启用状态
 	rpc updateNodeIsOn(UpdateNodeIsOnRequest) returns (RPCSuccess);
+
+	// 修改节点是否过移动
+	rpc updateNodeBypassMobile(UpdateNodeBypassMobile) returns (RPCSuccess);
 }
 
 // 创建节点
@@ -866,4 +869,10 @@ message FindNodeWebPPoliciesResponse {
 message UpdateNodeIsOnRequest {
 	int64 nodeId = 1; // 节点ID
 	bool isOn = 2; // 是否启用
+}
+
+// 修改节点过移动
+message UpdateNodeBypassMobile{
+	int64 nodeId = 1;
+	int32 bypassMobile = 2;
 }

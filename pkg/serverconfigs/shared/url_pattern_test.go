@@ -1,10 +1,11 @@
-// Copyright 2023 GoEdge CDN goedge.cdn@gmail.com. All rights reserved. Official site: https://goedge.cn .
+// Copyright 2023 GoEdge CDN goedge.cdn@gmail.com. All rights reserved. Official site: https://goedge.cloud .
 
 package shared_test
 
 import (
-	"github.com/TeaOSLab/EdgeCommon/pkg/serverconfigs/shared"
 	"testing"
+
+	"github.com/TeaOSLab/EdgeCommon/pkg/serverconfigs/shared"
 )
 
 func TestURLPattern_Match(t *testing.T) {

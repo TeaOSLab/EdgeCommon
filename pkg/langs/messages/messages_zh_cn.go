@@ -711,6 +711,7 @@ func init() {
 		"waf@log_delete_ip_from_waf_policy":                                   "从WAF策略 %d 名单中删除IP %d",
 		"waf@log_update_forbidden_countries":                                  "WAF策略 %d 设置禁止访问的国家和地区",
 		"waf@log_update_forbidden_provinces":                                  "WAF策略 %d 设置禁止访问的省份",
+		"waf@log_update_forbidden_providers":                                  "WAF策略 %d 设置禁止访问的运营商",
 		"waf@log_update_ip_from_waf_policy":                                   "修改WAF策略 %d 名单中的IP %d",
 		"waf_action@log_create_waf_action":                                    "创建集群 %d 的WAF动作",
 		"waf_action@log_delete_waf_action":                                    "删除WAF动作 %d",

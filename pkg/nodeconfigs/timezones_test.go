@@ -3,9 +3,10 @@
 package nodeconfigs
 
 import (
-	"github.com/iwind/TeaGo/logs"
 	"testing"
 	"time"
+
+	"github.com/iwind/TeaGo/logs"
 )
 
 func TestFindAllTimeZoneLocations(t *testing.T) {

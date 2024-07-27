@@ -2,8 +2,9 @@ package shared
 
 import (
 	"encoding/json"
-	"github.com/iwind/TeaGo/types"
 	"time"
+
+	"github.com/iwind/TeaGo/types"
 )
 
 type TimeDurationUnit = string

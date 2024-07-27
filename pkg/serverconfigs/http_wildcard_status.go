@@ -2,9 +2,10 @@ package serverconfigs
 
 import (
 	"fmt"
-	"github.com/iwind/TeaGo/types"
 	"regexp"
 	"strings"
+
+	"github.com/iwind/TeaGo/types"
 )
 
 // 可能含有x字母的状态码

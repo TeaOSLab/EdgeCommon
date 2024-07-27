@@ -1,9 +1,10 @@
 package configutils
 
 import (
+	"strings"
+
 	"github.com/iwind/TeaGo/logs"
 	"github.com/iwind/TeaGo/utils/string"
-	"strings"
 )
 
 // MatchDomains 从一组规则中匹配域名

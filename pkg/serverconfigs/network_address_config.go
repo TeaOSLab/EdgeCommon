@@ -1,12 +1,13 @@
 package serverconfigs
 
 import (
-	"github.com/TeaOSLab/EdgeCommon/pkg/configutils"
-	"github.com/iwind/TeaGo/rands"
-	"github.com/iwind/TeaGo/types"
 	"regexp"
 	"strconv"
 	"strings"
+
+	"github.com/TeaOSLab/EdgeCommon/pkg/configutils"
+	"github.com/iwind/TeaGo/rands"
+	"github.com/iwind/TeaGo/types"
 )
 
 var regexpSinglePort = regexp.MustCompile(`^\d+$`)

@@ -1,17 +1,18 @@
-// Copyright 2022 GoEdge CDN goedge.cdn@gmail.com. All rights reserved. Official site: https://goedge.cn .
+// Copyright 2022 GoEdge CDN goedge.cdn@gmail.com. All rights reserved. Official site: https://goedge.cloud .
 
 package iplibrary_test
 
 import (
 	"bytes"
-	"github.com/TeaOSLab/EdgeCommon/pkg/iplibrary"
-	"github.com/iwind/TeaGo/rands"
-	"github.com/iwind/TeaGo/types"
-	timeutil "github.com/iwind/TeaGo/utils/time"
 	"net"
 	"runtime"
 	"testing"
 	"time"
+
+	"github.com/TeaOSLab/EdgeCommon/pkg/iplibrary"
+	"github.com/iwind/TeaGo/rands"
+	"github.com/iwind/TeaGo/types"
+	timeutil "github.com/iwind/TeaGo/utils/time"
 )
 
 func TestNewReader(t *testing.T) {

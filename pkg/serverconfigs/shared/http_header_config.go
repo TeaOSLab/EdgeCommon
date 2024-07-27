@@ -1,9 +1,10 @@
 package shared
 
 import (
-	"github.com/TeaOSLab/EdgeCommon/pkg/configutils"
 	"regexp"
 	"strings"
+
+	"github.com/TeaOSLab/EdgeCommon/pkg/configutils"
 )
 
 // HTTPHeaderReplaceValue 值替换定义

@@ -3,8 +3,9 @@ package serverconfigs
 import (
 	"bytes"
 	"encoding/json"
-	"github.com/TeaOSLab/EdgeCommon/pkg/serverconfigs/shared"
 	"time"
+
+	"github.com/TeaOSLab/EdgeCommon/pkg/serverconfigs/shared"
 )
 
 const DefaultHTTPCachePolicyFetchTimeout = 20 * time.Minute

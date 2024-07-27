@@ -1,11 +1,12 @@
 package serverconfigs
 
 import (
-	"github.com/TeaOSLab/EdgeCommon/pkg/serverconfigs/shared"
-	"github.com/iwind/TeaGo/types"
 	"net/url"
 	"regexp"
 	"strings"
+
+	"github.com/TeaOSLab/EdgeCommon/pkg/serverconfigs/shared"
+	"github.com/iwind/TeaGo/types"
 )
 
 type HTTPHostRedirectType = string
@@ -44,9 +45,9 @@ type HTTPHostRedirectConfig struct {
 	DomainBeforeIgnorePorts bool     `yaml:"domainBeforeIgnorePorts" json:"domainBeforeIgnorePorts"` // 忽略跳转前端口
 	DomainAfter             string   `yaml:"domainAfter" json:"domainAfter"`                         // 跳转之后的域名
 	DomainAfterScheme       string   `yaml:"domainAfterScheme" json:"domainAfterScheme"`             // 跳转之后的协议
-	//DomainRegexp  bool     `yaml:"domainRegexp" json:"domainRegexp"` // 使用正则匹配域名 TODO 暂时不实现
-	//DomainKeepPort bool `yaml:"domainKeepPort" json:"domainKeepPort"` // 是否保持端口 TODO 暂时不实现
-	//DomainNewPort int `yaml:"domainNewPort" json:"domainNewPort"` // 是否使用新端口 TODO 暂时不实现
+	// DomainRegexp  bool     `yaml:"domainRegexp" json:"domainRegexp"` // 使用正则匹配域名 TODO 暂时不实现
+	// DomainKeepPort bool `yaml:"domainKeepPort" json:"domainKeepPort"` // 是否保持端口 TODO 暂时不实现
+	// DomainNewPort int `yaml:"domainNewPort" json:"domainNewPort"` // 是否使用新端口 TODO 暂时不实现
 
 	// 端口跳转
 	PortsAll        bool     `yaml:"portsAll" json:"portsAll"`               // 所有端口

@@ -48,6 +48,8 @@ message Node {
 	NodeGroup nodeGroup = 36;
 	NodeRegion nodeRegion = 37;
 	repeated NodeCluster secondaryNodeClusters = 38; // 从集群
+
+	int32 bypassMobile = 101;
 }
 
 message BasicNode {

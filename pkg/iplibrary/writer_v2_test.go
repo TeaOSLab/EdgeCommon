@@ -1,16 +1,17 @@
-// Copyright 2022 GoEdge CDN goedge.cdn@gmail.com. All rights reserved. Official site: https://goedge.cn .
+// Copyright 2022 GoEdge CDN goedge.cdn@gmail.com. All rights reserved. Official site: https://goedge.cloud .
 
 package iplibrary_test
 
 import (
 	"bytes"
+	"testing"
+
 	"github.com/TeaOSLab/EdgeCommon/pkg/iplibrary"
 	"github.com/iwind/TeaGo/logs"
-	"testing"
 )
 
 func TestNewWriter(t *testing.T) {
-	//write
+	// write
 	var buf = &bytes.Buffer{}
 	var writer = iplibrary.NewWriterV1(buf, &iplibrary.Meta{
 		Author: "GoEdge <https://goedge.cloud>",

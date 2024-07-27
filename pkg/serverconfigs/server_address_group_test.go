@@ -1,10 +1,11 @@
 package serverconfigs
 
 import (
-	"github.com/iwind/TeaGo/assert"
-	"github.com/iwind/TeaGo/types"
 	"testing"
 	"time"
+
+	"github.com/iwind/TeaGo/assert"
+	"github.com/iwind/TeaGo/types"
 )
 
 func TestServerAddressGroup_Protocol(t *testing.T) {

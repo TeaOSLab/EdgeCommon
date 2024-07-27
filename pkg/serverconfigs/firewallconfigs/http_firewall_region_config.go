@@ -1,9 +1,10 @@
 package firewallconfigs
 
 import (
+	"strings"
+
 	"github.com/TeaOSLab/EdgeCommon/pkg/serverconfigs/regionconfigs"
 	"github.com/TeaOSLab/EdgeCommon/pkg/serverconfigs/shared"
-	"strings"
 )
 
 type HTTPFirewallRegionConfig struct {
@@ -13,6 +14,8 @@ type HTTPFirewallRegionConfig struct {
 	DenyCountryIds    []int64 `yaml:"denyCountryIds" json:"denyCountryIds"`       // 封禁的国家/地区
 	AllowProvinceIds  []int64 `yaml:"allowProvinceIds" json:"allowProvinceIds"`   // 允许的省或自治区
 	DenyProvinceIds   []int64 `yaml:"denyProvinceIds" json:"denyProvinceIds"`     // 封禁的省或自治区
+	AllowProviderIds  []int64 `yaml:"allowProviderIds" json:"allowProviderIds"`   // 允许的运营商
+	DenyProviderIds   []int64 `yaml:"denyProviderIds" json:"denyProviderIds"`     // 封禁的运营商
 	AllowSearchEngine bool    `yaml:"allowSearchEngine" json:"allowSearchEngine"` // 允许搜索引擎
 
 	CountryOnlyURLPatterns   []*shared.URLPattern `yaml:"countryOnlyURLPatterns" json:"countryOnlyURLPatterns"`     // 仅限的URL
@@ -23,17 +26,23 @@ type HTTPFirewallRegionConfig struct {
 	ProvinceExceptURLPatterns []*shared.URLPattern `yaml:"provinceExceptURLPatterns" json:"provinceExceptURLPatterns"` // 排除的URL
 	ProvinceHTML              string               `yaml:"provinceHTML" json:"provinceHTML"`                           // 提示HTML
 
+	ProviderOnlyURLPatterns   []*shared.URLPattern `yaml:"providerOnlyURLPatterns" json:"providerOnlyURLPatterns"`     // 仅限的URL
+	ProviderExceptURLPatterns []*shared.URLPattern `yaml:"providerExceptURLPatterns" json:"providerExceptURLPatterns"` // 排除的URL
+	ProviderHTML              string               `yaml:"providerHTML" json:"providerHTML"`                           // 提示HTML
+
 	isNotEmpty bool
 
 	allowCountryIdMap  map[int64]bool
 	denyCountryIdMap   map[int64]bool
 	allowProvinceIdMap map[int64]bool
 	denyProvinceIdMap  map[int64]bool
+	allowProviderIdMap map[int64]bool
+	denyProviderIdMap  map[int64]bool
 }
 
 func (this *HTTPFirewallRegionConfig) Init() error {
 	// countries and provinces
-	this.isNotEmpty = len(this.AllowCountryIds) > 0 || len(this.AllowProvinceIds) > 0 || len(this.DenyCountryIds) > 0 || len(this.DenyProvinceIds) > 0
+	this.isNotEmpty = len(this.AllowCountryIds) > 0 || len(this.AllowProvinceIds) > 0 || len(this.AllowProviderIds) > 0 || len(this.DenyCountryIds) > 0 || len(this.DenyProvinceIds) > 0 || len(this.DenyProviderIds) > 0
 	this.allowCountryIdMap = map[int64]bool{}
 	for _, countryId := range this.AllowCountryIds {
 		this.allowCountryIdMap[countryId] = true
@@ -58,6 +67,18 @@ func (this *HTTPFirewallRegionConfig) Init() error {
 
 	this.ProvinceHTML = strings.TrimSpace(this.ProvinceHTML)
 
+	this.allowProviderIdMap = map[int64]bool{}
+	for _, providerId := range this.AllowProviderIds {
+		this.allowProviderIdMap[providerId] = true
+	}
+
+	this.denyProviderIdMap = map[int64]bool{}
+	for _, providerId := range this.DenyProviderIds {
+		this.denyProviderIdMap[providerId] = true
+	}
+
+	this.ProviderHTML = strings.TrimSpace(this.ProviderHTML)
+
 	// url patterns
 	for _, pattern := range this.CountryExceptURLPatterns {
 		err := pattern.Init()
@@ -81,6 +102,20 @@ func (this *HTTPFirewallRegionConfig) Init() error {
 	}
 
 	for _, pattern := range this.ProvinceOnlyURLPatterns {
+		err := pattern.Init()
+		if err != nil {
+			return err
+		}
+	}
+
+	for _, pattern := range this.ProviderExceptURLPatterns {
+		err := pattern.Init()
+		if err != nil {
+			return err
+		}
+	}
+
+	for _, pattern := range this.ProviderOnlyURLPatterns {
 		err := pattern.Init()
 		if err != nil {
 			return err
@@ -158,6 +193,16 @@ func (this *HTTPFirewallRegionConfig) IsAllowedProvince(countryId int64, provinc
 	return true
 }
 
+func (this *HTTPFirewallRegionConfig) IsAllowedProvider(providerId int64) bool {
+	if len(this.allowProviderIdMap) > 0 {
+		return this.allowProviderIdMap[providerId]
+	}
+	if len(this.denyProviderIdMap) > 0 {
+		return !this.denyProviderIdMap[providerId]
+	}
+	return true
+}
+
 func (this *HTTPFirewallRegionConfig) MatchCountryURL(url string) bool {
 	// except
 	if len(this.CountryExceptURLPatterns) > 0 {
@@ -192,6 +237,28 @@ func (this *HTTPFirewallRegionConfig) MatchProvinceURL(url string) bool {
 
 	if len(this.ProvinceOnlyURLPatterns) > 0 {
 		for _, pattern := range this.ProvinceOnlyURLPatterns {
+			if pattern.Match(url) {
+				return true
+			}
+		}
+		return false
+	}
+
+	return true
+}
+
+func (this *HTTPFirewallRegionConfig) MatchProviderURL(url string) bool {
+	// except
+	if len(this.ProviderExceptURLPatterns) > 0 {
+		for _, pattern := range this.ProviderExceptURLPatterns {
+			if pattern.Match(url) {
+				return false
+			}
+		}
+	}
+
+	if len(this.ProviderOnlyURLPatterns) > 0 {
+		for _, pattern := range this.ProviderOnlyURLPatterns {
 			if pattern.Match(url) {
 				return true
 			}

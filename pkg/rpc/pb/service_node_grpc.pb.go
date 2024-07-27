@@ -86,6 +86,7 @@ const (
 	NodeService_FindNodeNetworkSecurityPolicy_FullMethodName              = "/pb.NodeService/findNodeNetworkSecurityPolicy"
 	NodeService_FindNodeWebPPolicies_FullMethodName                       = "/pb.NodeService/findNodeWebPPolicies"
 	NodeService_UpdateNodeIsOn_FullMethodName                             = "/pb.NodeService/updateNodeIsOn"
+	NodeService_UpdateNodeBypassMobile_FullMethodName                     = "/pb.NodeService/updateNodeBypassMobile"
 )
 
 // NodeServiceClient is the client API for NodeService service.
@@ -226,6 +227,8 @@ type NodeServiceClient interface {
 	FindNodeWebPPolicies(ctx context.Context, in *FindNodeWebPPoliciesRequest, opts ...grpc.CallOption) (*FindNodeWebPPoliciesResponse, error)
 	// 修改节点的启用状态
 	UpdateNodeIsOn(ctx context.Context, in *UpdateNodeIsOnRequest, opts ...grpc.CallOption) (*RPCSuccess, error)
+	// 修改节点是否过移动
+	UpdateNodeBypassMobile(ctx context.Context, in *UpdateNodeBypassMobile, opts ...grpc.CallOption) (*RPCSuccess, error)
 }
 
 type nodeServiceClient struct {
@@ -861,6 +864,15 @@ func (c *nodeServiceClient) UpdateNodeIsOn(ctx context.Context, in *UpdateNodeIs
 	return out, nil
 }
 
+func (c *nodeServiceClient) UpdateNodeBypassMobile(ctx context.Context, in *UpdateNodeBypassMobile, opts ...grpc.CallOption) (*RPCSuccess, error) {
+	out := new(RPCSuccess)
+	err := c.cc.Invoke(ctx, NodeService_UpdateNodeBypassMobile_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // NodeServiceServer is the server API for NodeService service.
 // All implementations should embed UnimplementedNodeServiceServer
 // for forward compatibility
@@ -999,6 +1011,8 @@ type NodeServiceServer interface {
 	FindNodeWebPPolicies(context.Context, *FindNodeWebPPoliciesRequest) (*FindNodeWebPPoliciesResponse, error)
 	// 修改节点的启用状态
 	UpdateNodeIsOn(context.Context, *UpdateNodeIsOnRequest) (*RPCSuccess, error)
+	// 修改节点是否过移动
+	UpdateNodeBypassMobile(context.Context, *UpdateNodeBypassMobile) (*RPCSuccess, error)
 }
 
 // UnimplementedNodeServiceServer should be embedded to have forward compatible implementations.
@@ -1205,6 +1219,9 @@ func (UnimplementedNodeServiceServer) FindNodeWebPPolicies(context.Context, *Fin
 }
 func (UnimplementedNodeServiceServer) UpdateNodeIsOn(context.Context, *UpdateNodeIsOnRequest) (*RPCSuccess, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateNodeIsOn not implemented")
+}
+func (UnimplementedNodeServiceServer) UpdateNodeBypassMobile(context.Context, *UpdateNodeBypassMobile) (*RPCSuccess, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateNodeBypassMobile not implemented")
 }
 
 // UnsafeNodeServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -2432,6 +2449,24 @@ func _NodeService_UpdateNodeIsOn_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
+func _NodeService_UpdateNodeBypassMobile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateNodeBypassMobile)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(NodeServiceServer).UpdateNodeBypassMobile(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: NodeService_UpdateNodeBypassMobile_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(NodeServiceServer).UpdateNodeBypassMobile(ctx, req.(*UpdateNodeBypassMobile))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // NodeService_ServiceDesc is the grpc.ServiceDesc for NodeService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -2702,6 +2737,10 @@ var NodeService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "updateNodeIsOn",
 			Handler:    _NodeService_UpdateNodeIsOn_Handler,
+		},
+		{
+			MethodName: "updateNodeBypassMobile",
+			Handler:    _NodeService_UpdateNodeBypassMobile_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{

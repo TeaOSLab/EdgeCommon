@@ -3,10 +3,11 @@ package shared
 import (
 	"bytes"
 	"errors"
-	"github.com/iwind/TeaGo/utils/string"
 	"net"
 	"regexp"
 	"strings"
+
+	"github.com/iwind/TeaGo/utils/string"
 )
 
 // IPRangeType IP Range类型

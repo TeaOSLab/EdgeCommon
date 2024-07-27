@@ -3,10 +3,11 @@
 package configutils_test
 
 import (
-	"github.com/TeaOSLab/EdgeCommon/pkg/configutils"
-	"github.com/iwind/TeaGo/assert"
 	"net"
 	"testing"
+
+	"github.com/TeaOSLab/EdgeCommon/pkg/configutils"
+	"github.com/iwind/TeaGo/assert"
 )
 
 func TestIsIPv4(t *testing.T) {

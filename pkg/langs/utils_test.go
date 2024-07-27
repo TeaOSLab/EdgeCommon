@@ -1,10 +1,11 @@
-// Copyright 2023 GoEdge CDN goedge.cdn@gmail.com. All rights reserved. Official site: https://goedge.cn .
+// Copyright 2023 GoEdge CDN goedge.cdn@gmail.com. All rights reserved. Official site: https://goedge.cloud .
 
 package langs_test
 
 import (
-	"github.com/TeaOSLab/EdgeCommon/pkg/langs"
 	"testing"
+
+	"github.com/TeaOSLab/EdgeCommon/pkg/langs"
 )
 
 func TestMessage(t *testing.T) {
@@ -19,7 +20,7 @@ func TestMessageVariable(t *testing.T) {
 	lang.Set("user2", "${lang.user}")
 	lang.Set("user_name", "Name: ${lang.user}")
 	lang.Set("user_name3", "Name: ${lang.user3}, ${user4}")
-	//lang.Set("user3", "")
+	// lang.Set("user3", "")
 
 	err := lang.Compile()
 	if err != nil {

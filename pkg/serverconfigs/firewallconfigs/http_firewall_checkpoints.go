@@ -1,8 +1,9 @@
 package firewallconfigs
 
 import (
-	"github.com/iwind/TeaGo/maps"
 	"regexp"
+
+	"github.com/iwind/TeaGo/maps"
 )
 
 // AllCheckpoints all check points list

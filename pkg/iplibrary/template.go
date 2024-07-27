@@ -1,10 +1,11 @@
-// Copyright 2022 GoEdge CDN goedge.cdn@gmail.com. All rights reserved. Official site: https://goedge.cn .
+// Copyright 2022 GoEdge CDN goedge.cdn@gmail.com. All rights reserved. Official site: https://goedge.cloud .
 
 package iplibrary
 
 import (
-	"github.com/iwind/TeaGo/lists"
 	"regexp"
+
+	"github.com/iwind/TeaGo/lists"
 )
 
 type Template struct {

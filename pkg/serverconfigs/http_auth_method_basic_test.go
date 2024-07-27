@@ -4,10 +4,11 @@ package serverconfigs
 
 import (
 	"encoding/base64"
-	"github.com/iwind/TeaGo/assert"
-	"github.com/iwind/TeaGo/maps"
 	"net/http"
 	"testing"
+
+	"github.com/iwind/TeaGo/assert"
+	"github.com/iwind/TeaGo/maps"
 )
 
 func TestHTTPAuthBasicMethodUser_Validate(t *testing.T) {

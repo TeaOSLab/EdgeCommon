@@ -3,10 +3,11 @@ package shared
 import (
 	"bytes"
 	"fmt"
-	"github.com/iwind/TeaGo/assert"
 	"net"
 	"regexp"
 	"testing"
+
+	"github.com/iwind/TeaGo/assert"
 )
 
 func TestRequestCond_Compare1(t *testing.T) {

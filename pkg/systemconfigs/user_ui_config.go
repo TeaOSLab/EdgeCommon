@@ -1,9 +1,10 @@
 package systemconfigs
 
 import (
+	"time"
+
 	"github.com/iwind/TeaGo/types"
 	timeutil "github.com/iwind/TeaGo/utils/time"
-	"time"
 )
 
 // UserUIConfig 用户界面相关配置

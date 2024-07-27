@@ -1,10 +1,11 @@
-// Copyright 2023 GoEdge CDN goedge.cdn@gmail.com. All rights reserved. Official site: https://goedge.cn .
+// Copyright 2023 GoEdge CDN goedge.cdn@gmail.com. All rights reserved. Official site: https://goedge.cloud .
 
 package langs_test
 
 import (
-	"github.com/TeaOSLab/EdgeCommon/pkg/langs"
 	"testing"
+
+	"github.com/TeaOSLab/EdgeCommon/pkg/langs"
 )
 
 func TestManager_GetMessage(t *testing.T) {
@@ -30,7 +31,7 @@ func TestManager_MatchLang(t *testing.T) {
 	manager.AddLang("en")
 	manager.AddLang("zh-cn")
 	manager.AddLang("zh-hk")
-	//manager.AddLang("zh-tw")
+	// manager.AddLang("zh-tw")
 
 	for _, code := range []string{
 		"en",

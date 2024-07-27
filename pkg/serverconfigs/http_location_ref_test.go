@@ -1,8 +1,9 @@
 package serverconfigs
 
 import (
-	"github.com/iwind/TeaGo/logs"
 	"testing"
+
+	"github.com/iwind/TeaGo/logs"
 )
 
 func TestHTTPLocationRef(t *testing.T) {

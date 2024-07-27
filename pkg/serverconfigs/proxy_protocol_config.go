@@ -4,6 +4,7 @@ package serverconfigs
 
 import (
 	"errors"
+
 	"github.com/iwind/TeaGo/types"
 )
 

@@ -2,6 +2,7 @@ package filterconfigs
 
 import (
 	"fmt"
+
 	"github.com/iwind/TeaGo/types"
 )
 

@@ -1,9 +1,10 @@
 package serverconfigs
 
 import (
+	"strings"
+
 	"github.com/TeaOSLab/EdgeCommon/pkg/configutils"
 	"github.com/iwind/TeaGo/lists"
-	"strings"
 )
 
 type ServerNameType = string

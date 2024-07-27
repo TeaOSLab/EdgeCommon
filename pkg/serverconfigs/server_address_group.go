@@ -1,9 +1,10 @@
 package serverconfigs
 
 import (
-	"github.com/TeaOSLab/EdgeCommon/pkg/configutils"
 	"strings"
 	"sync"
+
+	"github.com/TeaOSLab/EdgeCommon/pkg/configutils"
 )
 
 type ServerAddressGroup struct {

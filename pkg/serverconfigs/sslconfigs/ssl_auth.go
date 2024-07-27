@@ -2,6 +2,7 @@ package sslconfigs
 
 import (
 	"crypto/tls"
+
 	"github.com/iwind/TeaGo/maps"
 )
 

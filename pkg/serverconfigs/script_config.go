@@ -3,8 +3,9 @@
 package serverconfigs
 
 import (
-	stringutil "github.com/iwind/TeaGo/utils/string"
 	"strings"
+
+	stringutil "github.com/iwind/TeaGo/utils/string"
 )
 
 type ScriptConfig struct {

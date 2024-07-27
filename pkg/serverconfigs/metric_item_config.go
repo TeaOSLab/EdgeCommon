@@ -3,9 +3,10 @@
 package serverconfigs
 
 import (
+	"time"
+
 	"github.com/iwind/TeaGo/Tea"
 	timeutil "github.com/iwind/TeaGo/utils/time"
-	"time"
 )
 
 // MetricItemConfig 指标配置

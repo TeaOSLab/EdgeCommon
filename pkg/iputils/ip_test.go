@@ -1,12 +1,13 @@
-// Copyright 2024 GoEdge CDN goedge.cdn@gmail.com. All rights reserved. Official site: https://goedge.cn .
+// Copyright 2024 GoEdge CDN goedge.cdn@gmail.com. All rights reserved. Official site: https://goedge.cloud .
 
 package iputils_test
 
 import (
-	"github.com/TeaOSLab/EdgeCommon/pkg/iputils"
-	"github.com/iwind/TeaGo/assert"
 	"runtime"
 	"testing"
+
+	"github.com/TeaOSLab/EdgeCommon/pkg/iputils"
+	"github.com/iwind/TeaGo/assert"
 )
 
 func TestIP_ParseIP(t *testing.T) {
@@ -198,7 +199,7 @@ func TestIP_Memory(t *testing.T) {
 		list = append(list, iputils.ParseIP("fd00:6868:6868:0:10ac:d056:3bf6:7452"))
 	}
 
-	//runtime.GC()
+	// runtime.GC()
 
 	var stat2 = &runtime.MemStats{}
 	runtime.ReadMemStats(stat2)

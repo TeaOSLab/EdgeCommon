@@ -1,8 +1,9 @@
 package filterconfigs
 
 import (
-	stringutil "github.com/iwind/TeaGo/utils/string"
 	"testing"
+
+	stringutil "github.com/iwind/TeaGo/utils/string"
 )
 
 func TestHex2DecFilter_Do(t *testing.T) {

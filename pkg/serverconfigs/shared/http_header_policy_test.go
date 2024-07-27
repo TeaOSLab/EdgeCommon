@@ -1,8 +1,9 @@
 package shared
 
 import (
-	"github.com/iwind/TeaGo/assert"
 	"testing"
+
+	"github.com/iwind/TeaGo/assert"
 )
 
 func TestHTTPHeaderPolicy_FormatHeaders(t *testing.T) {

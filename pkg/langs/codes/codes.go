@@ -710,6 +710,7 @@ const (
 	WAF_LogDeleteIPFromWAFPolicy                                langs.MessageCode = "waf@log_delete_ip_from_waf_policy"                                   // 从WAF策略 %d 名单中删除IP %d
 	WAF_LogUpdateForbiddenCountries                             langs.MessageCode = "waf@log_update_forbidden_countries"                                  // WAF策略 %d 设置禁止访问的国家和地区
 	WAF_LogUpdateForbiddenProvinces                             langs.MessageCode = "waf@log_update_forbidden_provinces"                                  // WAF策略 %d 设置禁止访问的省份
+	WAF_LogUpdateForbiddenProviders                             langs.MessageCode = "waf@log_update_forbidden_providers"                                  // WAF策略 %d 设置禁止访问的运营商
 	WAF_LogUpdateIPFromWAFPolicy                                langs.MessageCode = "waf@log_update_ip_from_waf_policy"                                   // 修改WAF策略 %d 名单中的IP %d
 	WAFAction_LogCreateWAFAction                                langs.MessageCode = "waf_action@log_create_waf_action"                                    // 创建集群 %d 的WAF动作
 	WAFAction_LogDeleteWAFAction                                langs.MessageCode = "waf_action@log_delete_waf_action"                                    // 删除WAF动作 %d
